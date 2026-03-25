@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Center Fresh Tattoo Studio — Case Study</title>
+    <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Fraunces:ital,opsz,wght@0,9..144,700;0,9..144,900;1,9..144,400&family=Audiowide&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="case-study.css">
+    <link rel="stylesheet" href="centerfresh.css">
+</head>
+<body>
+    <canvas id="gridCanvas"></canvas>
+
+    <nav style="position:fixed; top:0; left:0; right:0; z-index:100; background:rgba(10,12,40,0.7); backdrop-filter:blur(10px);">
+        <a href="index.html">Home</a>
+        <a href="index.html#about">About</a>
+        <a href="assets/PRANAY GOYAL RESUME.pdf" target="_blank">Resume</a>
+        <a href="mailto:goyalpranay8@gmail.com">Contact</a>
+    </nav>
+
+    <!-- ===== HERO ===== -->
+    <section class="cf-hero">
+        <img src="assets/CenterFreshHero.jpg" alt="Center Fresh Tattoo Studio" class="cf-hero-img cf-hero-img--real">
+        <div class="cf-hero-overlay">
+            <div class="cf-hero-text">
+                <p class="cf-label">Brand Campaign &nbsp;·&nbsp; Perfetti Van Melle &nbsp;·&nbsp; IIFA 2023</p>
+                <h1 class="cf-title">Center Fresh<br>Tattoo Studio</h1>
+                <p class="cf-sub">A browser-based 3D tattoo parlour built for 50,000 Bollywood fans — designed, modelled, and shipped in 6 weeks.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== THE BRIEF ===== -->
+    <section class="cf-section cf-section--dark">
+        <div class="cf-inner cf-overview-grid">
+            <div class="cf-overview-left">
+                <p class="cf-badge">The Brief</p>
+                <h2 class="cf-heading">A global brand. A Bollywood stage. Six weeks.</h2>
+                <p class="cf-body">Center Fresh isn't a niche product. It's Perfetti Van Melle's flagship in India — holding 31% of the chewing gum market with distribution across 3+ million retail outlets. When they show up at IIFA, they show up to make noise.</p>
+                <p class="cf-body">IIFA 2023 was held at Yas Island, Abu Dhabi — one of the most watched Bollywood events globally. Center Fresh commissioned Innovate Labs to build a digital experience that would capture that energy: something fans could interact with at the event and online, tied to a social campaign and a purchase mechanic.</p>
+                <p class="cf-body">I was handed the brief as a second-year CS student six weeks before launch. My job: design and build a browser-based 3D tattoo studio from scratch, rig a guide character, wire a registration backend, and ship something a global brand would put their logo on.</p>
+            </div>
+            <div class="cf-meta">
+                <div class="cf-meta-group">
+                    <span class="cf-meta-label">Client</span>
+                    <span class="cf-meta-value">Center Fresh / Perfetti Van Melle</span>
+                </div>
+                <div class="cf-meta-group">
+                    <span class="cf-meta-label">Agency</span>
+                    <span class="cf-meta-value">Innovate Labs Pvt Ltd</span>
+                </div>
+                <div class="cf-meta-group">
+                    <span class="cf-meta-label">My Role</span>
+                    <span class="cf-meta-value">3D Environment — Blender</span>
+                    <span class="cf-meta-value">Web Experience — Three.js</span>
+                    <span class="cf-meta-value">Character & Chat — p5.js</span>
+                </div>
+                <div class="cf-meta-group">
+                    <span class="cf-meta-label">Timeline</span>
+                    <span class="cf-meta-value">6 weeks, Apr – May 2023</span>
+                </div>
+                <div class="cf-meta-group">
+                    <span class="cf-meta-label">Team</span>
+                    <span class="cf-meta-value">Nevin Antony — Design Lead</span>
+                    <span class="cf-meta-value">Kuldeep Tanwar — PM</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== THE CHALLENGE ===== -->
+    <section class="cf-section cf-section--blue">
+        <div class="cf-inner">
+            <p class="cf-badge">The Real Problem</p>
+            <blockquote class="cf-hmw">
+                How do you build an immersive 3D experience that runs on a 3-year-old mid-range Android phone — held by someone standing in a noisy event hall — and still makes them want to stop and play?
+            </blockquote>
+            <div class="cf-goals-grid">
+                <div class="cf-goals-col">
+                    <h3 class="cf-goals-title">The Constraints</h3>
+                    <ol class="cf-goals-list">
+                        <li>6-week build with a 2-person core team</li>
+                        <li>Must run smoothly on mid-range mobile browsers</li>
+                        <li>No real-time lighting — too heavy for WebGL on mobile</li>
+                        <li>Brand colours, assets, and tone locked by Perfetti Van Melle guidelines</li>
+                    </ol>
+                </div>
+                <div class="cf-goals-col">
+                    <h3 class="cf-goals-title">The Goals</h3>
+                    <ol class="cf-goals-list">
+                        <li>Drive Instagram filter engagement and social sharing</li>
+                        <li>Push users toward a purchase via QR code mechanic</li>
+                        <li>Register fans for a chance to appear on Filmfare Digital</li>
+                        <li>Average session time above 2 minutes — long enough for the story to land</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== TIMELINE ===== -->
+    <section class="cf-section cf-section--dark">
+        <div class="cf-inner">
+            <p class="cf-badge">How It Was Built</p>
+            <h2 class="cf-heading">6 weeks, start to ship.</h2>
+            <p class="cf-body" style="max-width:560px; margin-bottom:48px;">The constraint that shaped every decision: this had to be performant on mobile. That meant no real-time shadows, no ray casting, no expensive lighting passes. Everything visual had to be pre-baked or faked convincingly.</p>
+            <div class="cf-timeline-grid">
+                <div class="cf-tl-col">
+                    <span class="cf-tl-week">Week 1</span>
+                    <p class="cf-tl-phase">Discovery</p>
+                    <p class="cf-tl-desc">Concept, moodboards, and environment sketches</p>
+                </div>
+                <div class="cf-tl-col">
+                    <span class="cf-tl-week">Week 2</span>
+                    <p class="cf-tl-phase">3D Build</p>
+                    <p class="cf-tl-desc">Modelling, UV unwrapping, and texture baking in Blender</p>
+                </div>
+                <div class="cf-tl-col">
+                    <span class="cf-tl-week">Weeks 3 – 5</span>
+                    <p class="cf-tl-phase">Development</p>
+                    <p class="cf-tl-desc">Three.js scene, Ramesh rigging, p5.js chat, backend wiring</p>
+                </div>
+                <div class="cf-tl-col">
+                    <span class="cf-tl-week">Week 6</span>
+                    <p class="cf-tl-phase">Launch</p>
+                    <p class="cf-tl-desc">QA, mobile optimisation, live at IIFA 2023</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FIRST CONTACT ===== -->
+    <section class="cf-section cf-section--dark" style="background:#05080e;">
+        <div class="cf-inner">
+            <p class="cf-badge">First Contact</p>
+            <h2 class="cf-heading">Before they met Ramesh,<br>they met this.</h2>
+            <p class="cf-body" style="max-width:560px;">The loading screen is the first impression. Most campaigns phone it in with a spinner. Ours opened with a branded cinematic frame — a dark void, floating 3D elements, the Center Fresh wordmark, and a single CTA. By the time a user tapped 'Move Ahead,' they were already inside the world.</p>
+            <div class="cf-center-phone">
+                <img src="assets/OnboardingScreen.png" alt="Center Fresh onboarding screen — Move Ahead">
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== THE EXPERIENCE ===== -->
+    <section class="cf-section cf-section--blue">
+        <div class="cf-inner">
+            <p class="cf-badge">The Experience</p>
+            <h2 class="cf-heading">Step inside the studio.</h2>
+            <p class="cf-body" style="max-width:620px; margin-bottom:48px;">Users enter a fully textured tattoo parlour — pan left and right, interact with objects, meet Ramesh, and eventually land at the Instagram filter chair. The entire environment is one Three.js scene. Every wall, shadow, and glow effect is pre-baked UV texture work. No real-time rendering. On a mid-range Android, it loads in under 4 seconds.</p>
+            <div class="cf-room-grid--3">
+                <div class="cf-phone-wrap--img">
+                    <img src="assets/StudioTable.png" alt="Studio entry — reception and art wall" class="cf-phone-img">
+                    <span class="cf-phone-caption">Entry View — Reception</span>
+                </div>
+                <div class="cf-phone-wrap--img">
+                    <img src="assets/TheBEst.png" alt="Full studio interior — sofa and neon" class="cf-phone-img">
+                    <span class="cf-phone-caption">Full Room — Sofa &amp; Neon</span>
+                </div>
+                <div class="cf-phone-wrap--img">
+                    <img src="assets/WallTexture.png" alt="Counter pan — Center Fresh brand wall" class="cf-phone-img">
+                    <span class="cf-phone-caption">Counter Pan — Brand Wall</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== RAMESH ===== -->
+    <section class="cf-section cf-section--dark">
+        <div class="cf-inner">
+            <p class="cf-badge">Character Design</p>
+            <h2 class="cf-heading">Ramesh —<br>the guy who makes<br>you stay.</h2>
+            <p class="cf-body" style="max-width:720px;">Every campaign experience dies if users don't know what to do next. Ramesh was the answer. Fully designed and rigged in Blender, then rendered into the Three.js scene, he greets users the moment they land, walks them through the studio, explains the contest, and steers them toward the Instagram filter chair.</p>
+            <p class="cf-body" style="max-width:720px;">His chat bubble system was designed in Illustrator for maximum expressiveness and built with p5.js for smooth frame-perfect animation. The brief for his personality: friendly, slightly cheeky, unmistakably Indian — a face that felt at home at an IIFA afterparty.</p>
+            <p class="cf-body" style="max-width:720px;">Ramesh's primary metric was funnel progression: how many users he moved from entry to registration. That drove every line of his dialogue and every animation decision.</p>
+            <div class="cf-phones-4col">
+                <div class="cf-phone-wrap--img">
+                    <img src="assets/ramesh1.png" alt="Ramesh greeting users" class="cf-phone-img">
+                </div>
+                <div class="cf-phone-wrap--img">
+                    <img src="assets/ramesh2.png" alt="Ramesh explaining the experience" class="cf-phone-img">
+                </div>
+                <div class="cf-phone-wrap--img">
+                    <img src="assets/ramesh3.png" alt="Ramesh walking users through" class="cf-phone-img">
+                </div>
+                <div class="cf-phone-wrap--img">
+                    <img src="assets/ramesh4.png" alt="Ramesh contest CTA" class="cf-phone-img">
+                </div>
+            </div>
+            <div class="cf-reg-callout">
+                <span class="cf-reg-callout-label">The Destination</span>
+                <p class="cf-reg-callout-caption">After Ramesh walked them through the studio, every user landed here — a fully branded in-scene registration form tied to the Filmfare Digital contest.</p>
+                <div class="cf-center-phone">
+                    <img src="assets/RameshRegistrationForm.png" alt="Center Fresh in-scene registration form">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== KEY FEATURES ===== -->
+    <section class="cf-section cf-section--blue">
+        <div class="cf-inner">
+            <p class="cf-badge">Technical Craft</p>
+            <h2 class="cf-heading">Faking reality, convincingly.</h2>
+            <p class="cf-body" style="max-width:600px; margin-bottom:48px;">The challenge wasn't making it look good in isolation — it was making it look good on the worst device in the room, with the slowest connection, with someone's arm in the way. Every technical decision was made through that lens.</p>
+            <div class="cf-features-grid">
+                <div class="cf-feature-card">
+                    <div class="cf-feature-img-wrap">
+                        <img src="assets/Ceiling.png" alt="Pre-baked neon ceiling lighting" class="cf-feature-img">
+                    </div>
+                    <div class="cf-feature-text">
+                        <h4 class="cf-feature-title">Baked Lighting</h4>
+                        <p class="cf-feature-desc">All shadows and ceiling glow pre-baked in Blender. The room looks fully lit without a single real-time light source — zero GPU overhead on mobile.</p>
+                    </div>
+                </div>
+                <div class="cf-feature-card">
+                    <div class="cf-feature-img-wrap">
+                        <img src="assets/TheBEst.png" alt="Keep It Fresh neon sign — baked emission texture" class="cf-feature-img">
+                    </div>
+                    <div class="cf-feature-text">
+                        <h4 class="cf-feature-title">Neon Ceiling Glow</h4>
+                        <p class="cf-feature-desc">The "Keep it Fresh" sign looks like it emits light. It's a flat UV texture — no emission shader, no performance cost, just careful texture painting in Blender.</p>
+                    </div>
+                </div>
+                <div class="cf-feature-card">
+                    <div class="cf-feature-img-wrap">
+                        <img src="assets/shelf.png" alt="Depth illusion geometric shelving" class="cf-feature-img">
+                    </div>
+                    <div class="cf-feature-text">
+                        <h4 class="cf-feature-title">Depth Illusion Shelving</h4>
+                        <p class="cf-feature-desc">A flat wall texture shadow-augmented in Blender to read as a physical shelf at every viewing angle. No extra geometry. The brain fills in the rest.</p>
+                    </div>
+                </div>
+                <div class="cf-feature-card">
+                    <div class="cf-feature-img-wrap">
+                        <img src="assets/WallTexture.png" alt="Real geometry counter and brand wall" class="cf-feature-img">
+                    </div>
+                    <div class="cf-feature-text">
+                        <h4 class="cf-feature-title">Selective Real Geometry</h4>
+                        <p class="cf-feature-desc">Only the chandelier, sofa, tattoo chair, and counter are true 3D meshes — low-poly, every polygon justified. Everything else is baked texture work.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== RESULTS ===== -->
+    <section class="cf-section cf-section--dark cf-results">
+        <div class="cf-inner">
+            <p class="cf-badge">Results</p>
+            <h2 class="cf-heading">It worked.</h2>
+            <p class="cf-body" style="max-width:560px; margin-bottom:56px;">The experience launched alongside IIFA 2023 at Yas Island. Center Fresh put it in front of their full digital audience — and the numbers reflected that a 6-week build from a 2-person team had done something worth noticing.</p>
+            <div class="cf-stats-grid">
+                <div class="cf-stat">
+                    <span class="cf-stat-number">67%</span>
+                    <span class="cf-stat-label">Increase in unique visits compared to previous Center Fresh digital campaign</span>
+                </div>
+                <div class="cf-stat">
+                    <span class="cf-stat-number">150%</span>
+                    <span class="cf-stat-label">Increase in Instagram filter shares — the campaign's primary social mechanic</span>
+                </div>
+                <div class="cf-stat">
+                    <span class="cf-stat-number">150%</span>
+                    <span class="cf-stat-label">Increase in QR code scans — direct purchase-intent signal for Center Fresh</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <a href="exporio.html" class="next-project">
+        <span class="next-project-label">Next Project</span>
+        <span class="next-project-title">Exporio Rebrand</span>
+        <span class="next-project-arrow">→</span>
+    </a>
+
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div class="footer-name">Pranay Goyal</div>
+            <div class="footer-tagline">UI/UX & Visual Designer — open to opportunities</div>
+            <div class="footer-links">
+                <a href="mailto:goyalpranay8@gmail.com" class="footer-link">goyalpranay8@gmail.com</a>
+                <span class="footer-dot">·</span>
+                <a href="tel:+918527568889" class="footer-link">+91 85275 68889</a>
+                <span class="footer-dot">·</span>
+                <a href="https://www.linkedin.com/in/pranay-goyal-0a65b3248/" target="_blank" class="footer-link">LinkedIn</a>
+                <span class="footer-dot">·</span>
+                <a href="https://www.instagram.com/prannaygoyl" target="_blank" class="footer-link">@prannaygoyl</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

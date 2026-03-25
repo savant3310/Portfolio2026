@@ -1,0 +1,690 @@
+/* =============================================
+   ACCUPOLICY CASE STUDY
+   ============================================= */
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body { background: #fff; overflow-x: hidden; }
+
+/* ---- Shared avatar ---- */
+.ac-avatar {
+    position: absolute;
+    width: 140px;
+    pointer-events: none;
+}
+.ac-avatar--hero     { bottom: 0;   left: 48px; }
+.ac-avatar--overview { bottom: 0;   left: 48px; }
+.ac-avatar--research { bottom: 0; right: 60px; transform: scaleX(-1); }
+
+/* ---- Back link ---- */
+.ac-back {
+    display: inline-block;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 13px;
+    color: rgba(26,26,46,0.4);
+    text-decoration: none;
+    margin-bottom: 48px;
+    transition: color 0.2s;
+}
+.ac-back:hover { color: rgba(26,26,46,0.8); }
+
+/* =============================================
+   SECTION 1 — HERO
+   ============================================= */
+
+.ac-hero {
+    position: relative;
+    min-height: 100vh;
+    background: rgba(255,255,255,0.75);
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    padding-top: 80px;
+}
+
+.ac-hero-inner {
+    position: relative;
+    z-index: 1;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 80px 160px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+    width: 100%;
+}
+
+/* Logo lockup */
+.ac-logo-lockup {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 36px;
+}
+
+.ac-logo-icon {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3px;
+    width: 36px;
+    height: 36px;
+}
+
+.ac-logo-sq {
+    border-radius: 3px;
+    display: block;
+}
+.sq-red  { background: #e63030; }
+.sq-blue { background: #1a3cff; }
+
+.ac-logo-name {
+    font-family: 'Alfa Slab One', serif;
+    font-size: 22px;
+    color: #1a1a2e;
+    letter-spacing: 0.02em;
+}
+
+.ac-logo-sub {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 10px;
+    color: rgba(26,26,46,0.45);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-top: 2px;
+}
+
+.ac-headline-img {
+    display: block;
+    width: 100%;
+    max-width: 480px;
+    mix-blend-mode: multiply;
+}
+
+/* Mockup */
+.ac-hero-right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ac-mockup {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.ac-mockup-screen {
+    width: 380px;
+    height: 240px;
+    background: #1a2060;
+    border: 2px solid rgba(255,255,255,0.12);
+    border-radius: 10px 10px 0 0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ac-mockup-placeholder {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 12px;
+    color: rgba(255,255,255,0.2);
+    letter-spacing: 0.06em;
+}
+
+.ac-mockup-stand {
+    width: 60px;
+    height: 20px;
+    background: rgba(255,255,255,0.08);
+}
+
+.ac-mockup-base {
+    width: 120px;
+    height: 8px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 4px;
+}
+
+/* =============================================
+   SECTION 2 — OVERVIEW
+   ============================================= */
+
+.ac-overview {
+    position: relative;
+    background: #090d28;
+    padding: 100px 0 160px;
+    overflow: hidden;
+}
+
+.ac-overview-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 80px;
+    display: grid;
+    grid-template-columns: 1fr 240px;
+    gap: 80px;
+    align-items: start;
+}
+
+.ac-badge {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(100,140,255,0.6);
+    margin-bottom: 16px;
+}
+
+.ac-title {
+    font-family: 'Alfa Slab One', serif;
+    font-size: 72px;
+    color: #fff;
+    line-height: 1;
+    margin-bottom: 32px;
+    letter-spacing: -0.01em;
+}
+
+.ac-overview-body {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 16px;
+    color: rgba(180,200,255,0.6);
+    line-height: 1.8;
+    margin-bottom: 18px;
+    max-width: 580px;
+}
+
+/* Meta sidebar */
+.ac-overview-meta {
+    padding-top: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+}
+
+.ac-meta-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.ac-meta-label {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(100,140,255,0.45);
+    margin-bottom: 4px;
+}
+
+.ac-meta-value {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 14px;
+    color: rgba(220,230,255,0.75);
+    text-align: right;
+}
+
+/* =============================================
+   SECTION 3 — MARKET RESEARCH
+   ============================================= */
+
+.ac-research {
+    position: relative;
+    background: rgba(255,255,255,0.65);
+    padding: 72px 0 80px;
+    overflow: hidden;
+}
+
+/* Title row: avatar + title — centered */
+.ac-research-title-row {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    gap: 32px;
+    margin: 0 0 56px;
+    padding: 0 14%;
+}
+
+.ac-section-title {
+    font-family: 'Alfa Slab One', serif;
+    font-size: 44px;
+    color: #1a1a2e;
+    line-height: 1.1;
+}
+
+.ac-title-avatar {
+    width: 140px;
+    flex-shrink: 0;
+    object-fit: contain;
+}
+
+/* Two-column rows */
+.ac-row {
+    margin: 0 0 48px;
+    padding: 0 14%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 100px;
+    align-items: center;
+}
+
+/* Green card rows — card column wider */
+.ac-row--green {
+    grid-template-columns: 1.3fr 1fr;
+}
+
+.ac-col-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.ac-research-body {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 17px;
+    color: rgba(26,26,46,0.68);
+    line-height: 1.85;
+    margin-bottom: 20px;
+}
+.ac-research-body:last-child { margin-bottom: 0; }
+
+.ac-mark {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    background: transparent;
+}
+.ac-mark--neg { color: #c0001a; }
+.ac-mark--pos { color: #0066cc; }
+
+/* Annotated card images */
+.ac-col-card { display: flex; align-items: center; }
+
+.ac-ann-img {
+    width:75%;
+    display: block;
+    object-fit: contain;
+    mix-blend-mode: multiply;
+}
+
+/* Brand logo divider */
+.ac-logo-divider {
+    margin: 32px 0;
+    padding: 0 14%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ac-logo-divider--spaced {
+    margin-top: 60px;
+}
+
+/* Lockton logo */
+.ac-divider-logo {
+    height: 280px;
+    width: auto;
+    object-fit: contain;
+    mix-blend-mode: multiply;
+}
+
+/* Lemonade logo — separate size */
+.ac-logo-divider--spaced .ac-divider-logo {
+    height: 80px;
+}
+
+/* =============================================
+   iMAC HERO IMAGE
+   ============================================= */
+
+.ac-imac {
+    width: 100%;
+    max-width: 580px;
+    display: block;
+    object-fit: contain;
+    filter: drop-shadow(0 24px 60px rgba(0,0,0,0.45));
+}
+
+/* =============================================
+   SECTION 4 — WHAT I TOOK AWAY
+   ============================================= */
+
+.ac-takeaway {
+    background: #090d28;
+    padding: 100px 0 110px;
+}
+
+.ac-takeaway-inner {
+    padding: 0 14%;
+}
+
+.ac-takeaway-title {
+    font-family: 'Alfa Slab One', serif;
+    font-size: 48px;
+    color: #fff;
+    margin-bottom: 56px;
+    line-height: 1.05;
+}
+
+.ac-takeaway-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+}
+
+.ac-takeaway-card {
+    background: rgba(255,255,255,0.04);
+    border-radius: 18px;
+    padding: 40px 36px;
+    border: 1px solid rgba(255,255,255,0.07);
+}
+
+.ac-takeaway-card--lockton {
+    border-color: rgba(77,120,255,0.2);
+}
+
+.ac-takeaway-card--lemonade {
+    border-color: rgba(255,80,60,0.2);
+}
+
+.ac-takeaway-logo {
+    height: 48px;
+    max-width: 200px;
+    object-fit: contain;
+    margin-bottom: 32px;
+    display: block;
+    mix-blend-mode: screen;
+}
+
+.ac-takeaway-logo--lemonade {
+    height: 28px;
+}
+
+.ac-takeaway-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+}
+
+.ac-takeaway-list li {
+    padding-left: 16px;
+    border-left: 2px solid rgba(255,255,255,0.1);
+}
+
+.ac-takeaway-card--lockton .ac-takeaway-list li {
+    border-color: rgba(77,120,255,0.4);
+}
+
+.ac-takeaway-card--lemonade .ac-takeaway-list li {
+    border-color: rgba(255,80,60,0.4);
+}
+
+.ac-takeaway-point {
+    display: block;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: #fff;
+    letter-spacing: 0.04em;
+    margin-bottom: 6px;
+}
+
+.ac-takeaway-list p {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 14px;
+    color: rgba(180,200,255,0.5);
+    line-height: 1.75;
+    margin: 0;
+}
+
+/* =============================================
+   SECTION 5 — BRANDING
+   ============================================= */
+
+
+/* =============================================
+   BRAND IDENTITY SECTIONS
+   ============================================= */
+
+.ac-bg {
+    padding: 120px 0;
+}
+
+.ac-bg--light {
+    background: rgba(255,255,255,0.75);
+}
+
+.ac-bg--dark {
+    background: #090d28;
+}
+
+.ac-bi-inner {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 48px;
+}
+
+.ac-bi-label {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.ac-bg--light .ac-bi-label { color: rgba(26,26,46,0.4); }
+.ac-bg--dark  .ac-bi-label { color: rgba(255,255,255,0.3); }
+
+.ac-bi-heading {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 48px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin-bottom: 24px;
+    line-height: 1.05;
+}
+
+.ac-bg--light .ac-bi-heading { color: #1a1a2e; }
+.ac-bg--dark  .ac-bi-heading { color: #fff; }
+
+.ac-bi-desc {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 16px;
+    line-height: 1.8;
+    margin: 0;
+}
+
+.ac-bg--light .ac-bi-desc { color: rgba(26,26,46,0.5); }
+.ac-bg--dark  .ac-bi-desc { color: rgba(180,200,255,0.45); }
+
+/* Two-column split: text left, visual right */
+.ac-bi-split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+}
+
+.ac-bi-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.ac-bi-visual {
+    display: flex;
+    align-items: center;
+}
+
+.ac-bi-center {
+    display: flex;
+    justify-content: center;
+}
+
+.ac-bi-center .ac-bi-img {
+    width: 90%;
+    transform: translateX(-4%);
+}
+
+/* Images — fill the visual column */
+.ac-bi-img {
+    width: 100%;
+    display: block;
+    object-fit: contain;
+    border-radius: 10px;
+    mix-blend-mode: multiply;
+}
+
+.ac-bg--dark .ac-bi-img {
+    mix-blend-mode: normal;
+}
+
+/* =============================================
+   BRAND APPLICATIONS — SHOWCASE
+   ============================================= */
+
+.ac-apps {
+    padding: 120px 0;
+}
+
+.ac-apps-header {
+    max-width: 480px;
+    margin-bottom: 64px;
+}
+
+.ac-apps-header .ac-bi-heading {
+    font-size: 48px;
+}
+
+.ac-apps-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+    align-items: stretch;
+}
+
+.ac-app-card {
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.07);
+}
+
+.ac-app-img {
+    width: 100%;
+    display: block;
+    object-fit: cover;
+    aspect-ratio: 4/3;
+    transition: transform 0.5s ease;
+}
+
+.ac-app-card:hover .ac-app-img {
+    transform: scale(1.04);
+}
+
+.ac-app-caption {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 14px 20px;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.55);
+    background: linear-gradient(to top, rgba(9,13,40,0.9) 0%, transparent 100%);
+}
+
+/* =============================================
+   SECTION 6 — FINAL DESIGN
+   ============================================= */
+
+.ac-final {
+    background: rgba(255,255,255,0.65);
+    padding: 100px 0 0;
+    overflow: hidden;
+}
+
+.ac-final-inner {
+    padding: 0 14%;
+    margin-bottom: 72px;
+}
+
+.ac-final-title {
+    font-family: 'Alfa Slab One', serif;
+    font-size: 48px;
+    color: #1a1a2e;
+    margin-bottom: 16px;
+    line-height: 1.05;
+}
+
+.ac-final-sub {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 17px;
+    color: rgba(26,26,46,0.55);
+    line-height: 1.7;
+}
+
+/* Two-column layout: devices left, website right */
+.ac-final-layout {
+    display: grid;
+    grid-template-columns: 1fr 1.1fr;
+    align-items: start;
+    padding: 0 14% 0 14%;
+    gap: 48px;
+}
+
+/* Left: devices stacked */
+.ac-final-devices {
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+    padding-bottom: 80px;
+    padding-right: 40px;
+}
+
+.ac-device {
+    display: block;
+    width: 100%;
+    object-fit: contain;
+    filter: drop-shadow(0 16px 48px rgba(0,0,0,0.5));
+}
+
+.ac-device--imac  { width: 90%; }
+.ac-device--ipad  { width: 80%; align-self: center; }
+.ac-device--macbook { width: 95%; }
+
+/* Right: full website — scrolls naturally, no crop */
+.ac-final-website {
+    align-self: stretch;
+}
+
+.ac-wireframe {
+    width: 100%;
+    display: block;
+    object-fit: contain;
+}
+
+/* =============================================
+   COMING SOON
+   ============================================= */
+
+.ac-coming-soon {
+    background: rgba(255,255,255,0.9);
+    padding: 60px 80px;
+    text-align: center;
+    border-top: 1px solid rgba(0,0,0,0.06);
+}
+
+.ac-coming-soon p {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 14px;
+    color: rgba(26,26,46,0.35);
+    letter-spacing: 0.04em;
+}

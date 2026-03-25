@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Audiowide&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Canvas for interactive grid -->
+    <canvas id="gridCanvas"></canvas>
+
+    <!-- Navbar -->
+    <nav>
+        <a href="#">Home</a>
+        <a href="#about">About</a>
+        <a href="assets/PRANAY GOYAL RESUME.pdf" target="_blank">Resume</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <!-- ===== MAIN HERO ===== -->
+    <main class="main-section">
+
+        <!-- Decorative squares -->
+        <div class="deco" style="width:44px;height:44px;top:70px;right:130px;"></div>
+        <div class="deco" style="width:26px;height:26px;top:170px;left:42%;opacity:0.38;"></div>
+        <div class="deco" style="width:52px;height:52px;bottom:90px;right:230px;opacity:0.32;"></div>
+        <div class="deco" style="width:30px;height:30px;bottom:80px;left:38%;opacity:0.28;"></div>
+        <div class="deco" style="width:18px;height:18px;top:130px;left:52%;opacity:0.22;"></div>
+        <div class="deco" style="width:36px;height:36px;bottom:150px;left:55px;opacity:0.28;background:rgba(90,110,195,0.3);"></div>
+
+        <!-- Toggle -->
+        <div class="toggle-area" id="toggleArea">
+            <img src="assets/VisualSideButton.png" alt="Click to see the visual side" class="toggle-btn-img">
+            <div class="toggle-switch"></div>
+        </div>
+
+        <!-- Centred hero content -->
+        <div class="hero-inner">
+
+            <!-- Left content -->
+            <div class="hero-left">
+                <div class="sticky-note" id="stickyNote">
+                    <p>Toggle to see the visual side!</p>
+                </div>
+
+                <p class="hero-name">Pranay Goyal</p>
+
+                <h1 class="hero-headline">
+                    Started in code.<br>
+                    <span class="blue">Got lost in</span> 3D.<br>
+                    <span class="cyan">Ended up in design.</span>
+                </h1>
+
+                <p class="hero-body">
+                    CS grad turned 3D artist turned UI/UX designer —
+                    <span class="blue">I bring an engineer's logic</span> and a
+                    motion designer's eye to every product I touch.
+                    <span class="cyan">Interfaces that work</span> and feel
+                    like they were <span class="blue">made by someone who cares.</span>
+                </p>
+            </div>
+
+            <!-- Right circles + sticker -->
+            <div class="hero-right">
+                <div class="circles-wrapper" id="circlesWrapper">
+                    <div class="circle circle-1">
+                        <img src="assets/avatar1.png" alt="Avatar 1">
+                    </div>
+                    <div class="circle circle-2">
+                        <img src="assets/avatar2.png" alt="Avatar 2">
+                    </div>
+                    <img src="assets/Grafitti.png" alt="DESIGN" class="design-sticker">
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- ===== PEGBOARD ===== -->
+    <section class="pegboard-section">
+        <div class="pegboard-inner">
+            <div class="pegboard" id="pegboard">
+
+                <!-- ===== UX CARDS (light mode) ===== -->
+                <div class="project-card" data-type="ux" data-href="accupolicy.html"
+                     data-init-top="18" data-init-left="22"
+                     style="--rot:-3deg; top:18px; left:22px;">
+                    <div class="card-badge">⭐ Deep Dive</div>
+                    <div class="card-imgs card-imgs--single">
+                        <div class="card-img"><img src="assets/AccupolicyHero.jpg" alt="Accupolicy"></div>
+                    </div>
+                    <div class="card-title">Accupolicy</div>
+                    <div class="card-desc">Brand identity & UI for a fintech insurance platform targeting CEOs & individuals</div>
+                </div>
+
+                <div class="project-card" data-type="ux" data-href="dropby.html"
+                     data-init-top="55" data-init-left="318"
+                     style="--rot:2.5deg; top:55px; left:318px;">
+                    <div class="card-badge">Medium</div>
+                    <div class="card-imgs card-imgs--single">
+                        <div class="card-img"><img src="DropByAssets/ilovepdf_pages-to-jpg/DropBy_page-0001.jpg" alt="Drop By"></div>
+                    </div>
+                    <div class="card-title">Drop By</div>
+                    <div class="card-desc">Brand guidelines & UI screens for a social discovery app</div>
+                </div>
+
+                <div class="project-card" data-type="ux" data-href="pokedoro.html"
+                     data-init-top="22" data-init-left="608"
+                     style="--rot:-5deg; top:22px; left:608px;">
+                    <div class="card-badge">Quick</div>
+                    <div class="card-imgs card-imgs--single">
+                        <div class="card-img"><img src="assets/Screenshot 2025-05-31 222152.png" alt="Pokedoro"></div>
+                    </div>
+                    <div class="card-title">Pokedoro</div>
+                    <div class="card-desc">Pokémon-themed pomodoro timer — built & shipped</div>
+                </div>
+
+                <div class="project-card" data-type="ux" data-href="butter-batter.html"
+                     data-init-top="48" data-init-left="898"
+                     style="--rot:4deg; top:48px; left:898px;">
+                    <div class="card-badge">Quick</div>
+                    <div class="card-imgs card-imgs--single">
+                        <div class="card-img"><img src="assets/image.png" alt="Butter & Batter"></div>
+                    </div>
+                    <div class="card-title">Butter & Batter</div>
+                    <div class="card-desc">Bakery brand & digital presence — built & shipped</div>
+                </div>
+
+                <!-- ===== VISUAL CARDS (dark mode) ===== -->
+                <div class="project-card visual" data-type="visual" data-href="center-fresh.html"
+                     data-init-top="18" data-init-left="22"
+                     style="--rot:3deg; top:18px; left:22px;">
+                    <div class="card-badge">Medium</div>
+                    <div class="card-imgs card-imgs--single">
+                        <div class="card-img"><img src="assets/CenterFreshHero.jpg" alt="Center Fresh"></div>
+                    </div>
+                    <div class="card-title">Center Fresh</div>
+                    <div class="card-desc">Brand campaign — visual identity & creative direction</div>
+                </div>
+
+                <div class="project-card visual" data-type="visual" data-href="exporio.html"
+                     data-init-top="55" data-init-left="318"
+                     style="--rot:-2deg; top:55px; left:318px;">
+                    <div class="card-badge">Medium</div>
+                    <div class="card-imgs card-imgs--single">
+                        <div class="card-img"><img src="exporioassets/3.jpg" alt="Exporio"></div>
+                    </div>
+                    <div class="card-title">Exporio Rebrand</div>
+                    <div class="card-desc">Visual rebrand — brand identity & design system</div>
+                </div>
+
+                <div class="project-card visual" data-type="visual" data-href="3d-animation.html"
+                     data-init-top="22" data-init-left="608"
+                     style="--rot:4deg; top:22px; left:608px;">
+                    <div class="card-badge">Quick</div>
+                    <div class="card-imgs card-imgs--single">
+                        <div class="card-img"><img src="assets/ducksducks.png" alt="3D Animation"></div>
+                    </div>
+                    <div class="card-title">3D Animation</div>
+                    <div class="card-desc">Compilation of 3D renders & animation work</div>
+                </div>
+
+                <div class="project-card visual" data-type="visual" data-href="motion-reel.html"
+                     data-init-top="48" data-init-left="898"
+                     style="--rot:-3.5deg; top:48px; left:898px;">
+                    <div class="card-badge">Quick</div>
+                    <div class="card-imgs card-imgs--single">
+                        <div class="card-img"><img src="assets/RenewBuyHero.png" alt="Motion Reel"></div>
+                    </div>
+                    <div class="card-title">Motion Reel</div>
+                    <div class="card-desc">Motion graphics compilation reel</div>
+                </div>
+
+                <!-- Photo cards — light mode set -->
+                <!-- Photo cards — light mode set -->
+                <div class="peg-photo peg-photo--ux" style="width:195px; top:358px; left:28px; transform:rotate(-5deg);">
+                    <div class="peg-pin"></div>
+                    <img src="assets/WhatsApp Image 2026-03-25 at 07.44.25.jpeg" alt="gym selfie" class="peg-photo-img">
+                    <div class="peg-photo-caption">me, probably</div>
+                </div>
+
+                <div class="peg-photo peg-photo--ux" style="width:185px; top:375px; left:460px; transform:rotate(3deg);">
+                    <div class="peg-pin"></div>
+                    <img src="assets/WhatsApp Image 2026-03-25 at 07.41.17.jpeg" alt="guitar room" class="peg-photo-img">
+                    <div class="peg-photo-caption">the studio</div>
+                </div>
+
+                <div class="peg-photo peg-photo--ux" style="width:190px; top:355px; left:740px; transform:rotate(-2.5deg);">
+                    <div class="peg-pin"></div>
+                    <img src="assets/WhatsApp Image 2026-03-25 at 07.40.39.jpeg" alt="owl sketch" class="peg-photo-img">
+                    <div class="peg-photo-caption">still sketching</div>
+                </div>
+
+                <!-- Photo cards — dark mode set -->
+                <div class="peg-photo peg-photo--visual" style="width:195px; top:358px; left:28px; transform:rotate(-5deg);">
+                    <div class="peg-pin"></div>
+                    <img src="assets/GuitarPic.jpeg" alt="playing guitar on stage" class="peg-photo-img">
+                    <div class="peg-photo-caption">Influencer era</div>
+                </div>
+
+                <div class="peg-photo peg-photo--visual" style="width:185px; top:375px; left:460px; transform:rotate(3deg);">
+                    <div class="peg-pin"></div>
+                    <img src="assets/WhatsApp Image 2026-03-25 at 07.44.25.jpeg" alt="gym selfie" class="peg-photo-img">
+                    <div class="peg-photo-caption">me, probably</div>
+                </div>
+
+                <div class="peg-photo peg-photo--visual" style="width:190px; top:355px; left:740px; transform:rotate(-2.5deg);">
+                    <div class="peg-pin"></div>
+                    <img src="assets/WhatsApp Image 2026-03-25 at 07.38.11.jpeg" alt="mountain vibes" class="peg-photo-img">
+                    <div class="peg-photo-caption">vibes only</div>
+                </div>
+
+                <!-- Skills bin -->
+                <div class="skills-bin">
+                    <!-- Light mode: UX tools -->
+                    <div class="bin-cards bin-cards--ux">
+                        <div class="skill-tile">
+                            <!-- Figma (inline SVG — PDF not usable as img) -->
+                            <svg viewBox="0 0 24 24" fill="#1E1E1E" width="26" height="26" xmlns="http://www.w3.org/2000/svg"><path d="M15.852 8.981h-4.588V0h4.588c2.476 0 4.49 2.014 4.49 4.49s-2.014 4.491-4.49 4.491zM12.735 7.51h3.117c1.665 0 3.019-1.355 3.019-3.019s-1.355-3.019-3.019-3.019h-3.117V7.51zm0 1.471H8.148c-2.476 0-4.49-2.014-4.49-4.49S5.672 0 8.148 0h4.588v8.981zm-4.587-7.51c-1.665 0-3.019 1.355-3.019 3.019s1.354 3.02 3.019 3.02h3.117V1.471H8.148zm4.587 15.019H8.148c-2.476 0-4.49-2.014-4.49-4.49s2.014-4.49 4.49-4.49h4.588v8.98zM8.148 8.981c-1.665 0-3.019 1.355-3.019 3.019s1.355 3.019 3.019 3.019h3.117V8.981H8.148zM8.172 24c-2.489 0-4.515-2.014-4.515-4.49s2.014-4.49 4.49-4.49h4.588v4.441c0 2.503-2.047 4.539-4.563 4.539zm-.024-7.51a3.023 3.023 0 0 0-3.019 3.019c0 1.665 1.365 3.019 3.044 3.019 1.705 0 3.093-1.376 3.093-3.068v-2.97H8.148zm7.704 0h-.098c-2.476 0-4.49-2.014-4.49-4.49s2.014-4.49 4.49-4.49h.098c2.476 0 4.49 2.014 4.49 4.49s-2.014 4.49-4.49 4.49zm-.097-7.509c-1.665 0-3.019 1.355-3.019 3.019s1.355 3.019 3.019 3.019h.098c1.665 0 3.019-1.355 3.019-3.019s-1.355-3.019-3.019-3.019h-.098z"/></svg>
+                        </div>
+                        <div class="skill-tile">
+                            <img src="assets/Adobe Illustrator CC Old.svg" alt="Adobe Illustrator">
+                        </div>
+                        <div class="skill-tile">
+                            <img src="assets/Claude.svg" alt="Claude">
+                        </div>
+                    </div>
+                    <!-- Dark mode: Motion & 3D tools -->
+                    <div class="bin-cards bin-cards--visual">
+                        <div class="skill-tile">
+                            <img src="assets/Adobe After Effects.svg" alt="After Effects">
+                        </div>
+                        <div class="skill-tile">
+                            <img src="assets/Adobe Premiere 2020 Years.svg" alt="Premiere Pro" style="width:48px;height:48px;">
+                        </div>
+                        <div class="skill-tile">
+                            <!-- Blender (no file provided — inline SVG) -->
+                            <svg viewBox="0 0 24 24" fill="#1E1E1E" width="26" height="26" xmlns="http://www.w3.org/2000/svg"><path d="M12.51 13.214c.046-.8.438-1.506 1.03-2.006a3.424 3.424 0 0 1 2.212-.79c.85 0 1.631.3 2.211.79.592.5.983 1.206 1.028 2.005.045.823-.285 1.586-.865 2.153a3.389 3.389 0 0 1-2.374.938 3.393 3.393 0 0 1-2.376-.938c-.58-.567-.91-1.33-.865-2.152M7.35 14.831c.006.314.106.922.256 1.398a7.372 7.372 0 0 0 1.593 2.757 8.227 8.227 0 0 0 2.787 2.001 8.947 8.947 0 0 0 3.66.76 8.964 8.964 0 0 0 3.657-.772 8.285 8.285 0 0 0 2.785-2.01 7.428 7.428 0 0 0 1.592-2.762 6.964 6.964 0 0 0 .25-3.074 7.123 7.123 0 0 0-1.016-2.779 7.764 7.764 0 0 0-1.852-2.043h.002L13.566 2.55l-.02-.015c-.492-.378-1.319-.376-1.86.002-.547.382-.609 1.015-.123 1.415l-.001.001 3.126 2.543-9.53.01h-.013c-.788.001-1.545.518-1.695 1.172-.154.665.38 1.217 1.2 1.22V8.9l4.83-.01-8.62 6.617-.034.025c-.813.622-1.075 1.658-.563 2.313.52.667 1.625.668 2.447.004L7.414 14s-.069.52-.063.831zm12.09 1.741c-.97.988-2.326 1.548-3.795 1.55-1.47.004-2.827-.552-3.797-1.538a4.51 4.51 0 0 1-1.036-1.622 4.282 4.282 0 0 1 .282-3.519 4.702 4.702 0 0 1 1.153-1.371c.942-.768 2.141-1.183 3.396-1.185 1.256-.002 2.455.41 3.398 1.175.48.391.87.854 1.152 1.367a4.28 4.28 0 0 1 .522 1.706 4.236 4.236 0 0 1-.239 1.811 4.54 4.54 0 0 1-1.035 1.626"/></svg>
+                        </div>
+                    </div>
+                    <div class="bin-bucket"></div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== JOURNEY SECTION ===== -->
+    <section class="journey-section" id="about">
+        <div class="journey-inner">
+
+            <!-- Big photo column -->
+            <div class="journey-photo-col">
+                <div class="journey-photo">
+                    <img src="assets/MehendiPic.jpeg" alt="Pranay Goyal" style="width:100%;height:100%;object-fit:cover;object-position:center top;border-radius:inherit;display:block;">
+                </div>
+            </div>
+
+            <!-- Content column -->
+            <div class="journey-content-col">
+
+            <div class="journey-header">
+                <h2 class="journey-title">How I got here</h2>
+                <p class="journey-bio">
+                    I studied Computer Science at MIT Bangalore — started building games, writing code,
+                    fell in love with 3D. Then somewhere between Blender renders and Unity scenes I realised
+                    the part I loved most was making things <span class="blue">look</span> and
+                    <span class="cyan">feel</span> right. That pulled me out of engineering and into design,
+                    and I haven't looked back since.
+                </p>
+            </div>
+
+            <div class="timeline">
+
+                <div class="tl-entry">
+                    <div class="tl-left">
+                        <span class="tl-date">Apr – Sep 2023</span>
+                    </div>
+                    <div class="tl-mid">
+                        <div class="tl-dot"></div>
+                        <div class="tl-line"></div>
+                    </div>
+                    <div class="tl-right">
+                        <div class="tl-role">Blender Artist & Unity Developer</div>
+                        <div class="tl-company">Innovate Labs</div>
+                        <div class="tl-desc">AR/VR startup. Built immersive experiences in Unity and created 3D assets and environments in Blender.</div>
+                    </div>
+                </div>
+
+                <div class="tl-entry">
+                    <div class="tl-left">
+                        <span class="tl-date">May – Jul 2024</span>
+                    </div>
+                    <div class="tl-mid">
+                        <div class="tl-dot"></div>
+                        <div class="tl-line"></div>
+                    </div>
+                    <div class="tl-right">
+                        <div class="tl-role">Freelance — 3D & Web</div>
+                        <div class="tl-company">Butter & Batter</div>
+                        <div class="tl-desc">Built their website and produced hyper-realistic 3D renders of their product lineup — assorted flavoured macarons.</div>
+                    </div>
+                </div>
+
+                <div class="tl-entry">
+                    <div class="tl-left">
+                        <span class="tl-date">Aug – Dec 2024</span>
+                    </div>
+                    <div class="tl-mid">
+                        <div class="tl-dot"></div>
+                        <div class="tl-line"></div>
+                    </div>
+                    <div class="tl-right">
+                        <div class="tl-role">3D & Motion Designer</div>
+                        <div class="tl-company">The Solid Corp</div>
+                        <div class="tl-desc">3D animation, motion reels, and marketing content. Pushed the visual craft further into storytelling territory.</div>
+                    </div>
+                </div>
+
+                <div class="tl-entry">
+                    <div class="tl-left">
+                        <span class="tl-date">Jul 2025 – Jan 2026</span>
+                    </div>
+                    <div class="tl-mid">
+                        <div class="tl-dot"></div>
+                        <div class="tl-line"></div>
+                    </div>
+                    <div class="tl-right">
+                        <div class="tl-role">UI/UX & Interaction Designer</div>
+                        <div class="tl-company">PenOnPaper Studios</div>
+                        <div class="tl-desc">Design agency. Built microanimations, websites, and end-to-end product flows — where the engineering background finally clicked with the design instinct.</div>
+                    </div>
+                </div>
+
+                <div class="tl-entry tl-now">
+                    <div class="tl-left">
+                        <span class="tl-date">Now</span>
+                    </div>
+                    <div class="tl-mid">
+                        <div class="tl-dot"></div>
+                    </div>
+                    <div class="tl-right">
+                        <div class="tl-role">Open to opportunities</div>
+                        <div class="tl-company">Wherever's next</div>
+                        <div class="tl-desc">Looking for the right place to build things that matter.</div>
+                    </div>
+                </div>
+
+            </div><!-- end timeline -->
+            </div><!-- end journey-content-col -->
+        </div><!-- end journey-inner -->
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="site-footer" id="contact">
+        <div class="footer-inner">
+            <div class="footer-name">Pranay Goyal</div>
+            <div class="footer-tagline">UI/UX & Visual Designer — open to opportunities</div>
+            <div class="footer-links">
+                <a href="mailto:goyalpranay8@gmail.com" class="footer-link">goyalpranay8@gmail.com</a>
+                <span class="footer-dot">·</span>
+                <a href="tel:+918527568889" class="footer-link">+91 85275 68889</a>
+                <span class="footer-dot">·</span>
+                <a href="https://www.linkedin.com/in/pranay-goyal-0a65b3248/" target="_blank" class="footer-link">LinkedIn</a>
+                <span class="footer-dot">·</span>
+                <a href="https://www.instagram.com/prannaygoyl" target="_blank" class="footer-link">@prannaygoyl</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,262 @@
+.cs-main {
+    position: relative;
+    z-index: 1;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 60px 60px 120px;
+}
+
+.cs-back {
+    display: inline-block;
+    font-family: 'Audiowide', sans-serif;
+    font-size: 13px;
+    color: var(--blue);
+    text-decoration: none;
+    margin-bottom: 36px;
+    opacity: 0.75;
+    transition: opacity 0.2s;
+}
+.cs-back:hover { opacity: 1; }
+
+.cs-badge {
+    font-family: 'Audiowide', sans-serif;
+    font-size: 10px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--blue);
+    margin-bottom: 14px;
+}
+
+.cs-title {
+    font-family: 'Alfa Slab One', serif;
+    font-size: 64px;
+    font-weight: 400;
+    line-height: 1.05;
+    color: #111;
+    margin-bottom: 18px;
+}
+
+.cs-sub {
+    font-family: 'Audiowide', sans-serif;
+    font-size: 16px;
+    line-height: 1.7;
+    color: #555;
+    max-width: 600px;
+    margin-bottom: 60px;
+}
+
+.cs-placeholder {
+    width: 100%;
+    min-height: 400px;
+    background: rgba(20, 0, 255, 0.04);
+    border: 2px dashed rgba(20, 0, 255, 0.15);
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Audiowide', sans-serif;
+    font-size: 14px;
+    color: rgba(20, 0, 255, 0.3);
+    letter-spacing: 1px;
+}
+
+/* ==================== DESCRIPTION ==================== */
+.cs-desc {
+    display: grid;
+    grid-template-columns: 1fr 220px;
+    gap: 48px;
+    align-items: start;
+    padding: 40px 0 56px;
+    border-top: 1px solid rgba(20, 0, 255, 0.1);
+    border-bottom: 1px solid rgba(20, 0, 255, 0.1);
+    margin-bottom: 56px;
+}
+
+.cs-desc-text p {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 16px;
+    line-height: 1.8;
+    color: #444;
+    margin: 0 0 18px;
+}
+.cs-desc-text p:last-child { margin-bottom: 0; }
+
+.cs-desc-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.cs-meta-item {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.cs-meta-label {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(20, 0, 255, 0.45);
+}
+
+.cs-meta-value {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: #222;
+}
+
+.cs-meta-link {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--blue);
+    text-decoration: none;
+    transition: opacity 0.2s;
+}
+.cs-meta-link:hover { opacity: 0.7; }
+body.visual-mode .cs-meta-link { color: #6677ff; }
+
+/* ==================== VIDEO ==================== */
+.cs-video-wrap {
+    margin-bottom: 60px;
+}
+
+.cs-video {
+    width: 100%;
+    border-radius: 14px;
+    display: block;
+    background: #000;
+}
+
+.cs-video-caption {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 12px;
+    color: rgba(0,0,0,0.35);
+    text-align: center;
+    margin: 10px 0 0;
+    letter-spacing: 0.04em;
+}
+
+/* ==================== VISUAL MODE — DESC + VIDEO ==================== */
+body.visual-mode .cs-desc {
+    border-color: rgba(77, 166, 255, 0.1);
+}
+
+body.visual-mode .cs-desc-text p {
+    color: rgba(180, 210, 255, 0.7);
+}
+
+body.visual-mode .cs-meta-label {
+    color: rgba(77, 166, 255, 0.45);
+}
+
+body.visual-mode .cs-meta-value {
+    color: #d0e8ff;
+}
+
+body.visual-mode .cs-video-caption {
+    color: rgba(160, 200, 255, 0.35);
+}
+
+/* ==================== SCROLL GALLERY ==================== */
+.scroll-gallery {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    padding: 0 60px 120px;
+    position: relative;
+    z-index: 1;
+}
+
+.frame-section {
+    width: 100%;
+    max-width: 900px;
+}
+
+.frame-img {
+    width: 100%;
+    display: block;
+    border-radius: 12px;
+}
+
+/* Placeholder until real images are dropped in */
+.frame-placeholder {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background: rgba(255,255,255,0.04);
+    border: 1.5px dashed rgba(255,255,255,0.12);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Audiowide', sans-serif;
+    font-size: 13px;
+    letter-spacing: 2px;
+    color: rgba(255,255,255,0.18);
+}
+
+/* ==================== VISUAL MODE OVERRIDES ==================== */
+body.visual-mode .cs-title { color: #fff; }
+body.visual-mode .cs-sub   { color: #b0b8cc; }
+body.visual-mode .cs-back  { color: #6677ff; }
+body.visual-mode .cs-badge { color: #6677ff; }
+body.visual-mode .cs-placeholder {
+    background: rgba(0, 180, 255, 0.04);
+    border-color: rgba(0, 180, 255, 0.15);
+    color: rgba(0, 180, 255, 0.3);
+}
+
+/* ==================== NEXT PROJECT ==================== */
+.next-project {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 80px 60px;
+    background: #f4f6ff;
+    text-decoration: none;
+    border-top: 1px solid rgba(20,0,255,0.07);
+    transition: background 0.25s ease;
+}
+.next-project:hover { background: #eceffe; }
+
+.next-project-label {
+    font-family: 'Audiowide', sans-serif;
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--blue);
+    opacity: 0.45;
+}
+
+.next-project-title {
+    font-family: 'Alfa Slab One', serif;
+    font-size: 52px;
+    color: #111;
+    line-height: 1;
+    transition: letter-spacing 0.25s ease;
+}
+.next-project:hover .next-project-title { letter-spacing: 0.02em; }
+
+.next-project-arrow {
+    font-size: 22px;
+    color: var(--blue);
+    opacity: 0.5;
+    margin-top: 2px;
+}
+
+body.visual-mode .next-project {
+    background: #0d0f1a;
+    border-color: rgba(100,150,255,0.08);
+}
+body.visual-mode .next-project:hover { background: #111525; }
+body.visual-mode .next-project-title { color: #fff; }
+body.visual-mode .next-project-label { color: #6af0c8; opacity: 0.6; }
+body.visual-mode .next-project-arrow { color: #6af0c8; opacity: 0.7; }

@@ -1,0 +1,547 @@
+/* =============================================
+   CENTER FRESH CASE STUDY
+   ============================================= */
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: #fff; overflow-x: hidden; }
+
+/* ---- Shared ---- */
+.cf-label {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.cf-badge {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+}
+
+.cf-heading {
+    font-family: 'Fraunces', serif;
+    font-size: 48px;
+    line-height: 1.05;
+    margin-bottom: 24px;
+}
+
+.cf-body {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 16px;
+    line-height: 1.8;
+    margin-bottom: 18px;
+}
+
+/* ---- Sections ---- */
+.cf-section {
+    padding: 100px 0;
+}
+
+.cf-section--dark {
+    background: #090d28;
+}
+
+.cf-section--dark .cf-badge  { color: rgba(100,140,255,0.6); }
+.cf-section--dark .cf-heading { color: #fff; }
+.cf-section--dark .cf-body   { color: rgba(180,200,255,0.6); }
+
+.cf-section--blue {
+    background: #5bc8f0;
+}
+
+.cf-section--blue .cf-badge   { color: rgba(0,40,80,0.55); }
+.cf-section--blue .cf-heading  { color: #fff; }
+.cf-section--blue .cf-body    { color: rgba(255,255,255,0.8); }
+
+.cf-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 80px;
+}
+
+/* =============================================
+   HERO
+   ============================================= */
+
+.cf-hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: flex-end;
+    overflow: hidden;
+    padding-top: 80px;
+}
+
+.cf-hero-img {
+    position: absolute;
+    inset: 0;
+    background: #5bc8f0;
+}
+
+.cf-hero-img--real {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+}
+
+.cf-hero-overlay {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    padding: 80px;
+    background: linear-gradient(to top, rgba(9,13,40,0.7) 0%, transparent 100%);
+}
+
+.cf-hero-text {
+    max-width: 700px;
+}
+
+.cf-hero .cf-label {
+    color: rgba(255,255,255,0.6);
+    margin-bottom: 16px;
+    display: block;
+}
+
+.cf-title {
+    font-family: 'Alfa Slab One', serif;
+    font-size: 80px;
+    color: #fff;
+    line-height: 1;
+    margin-bottom: 24px;
+}
+
+.cf-sub {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 18px;
+    color: rgba(255,255,255,0.7);
+    line-height: 1.7;
+    max-width: 540px;
+}
+
+/* Hero image placeholder */
+.cf-hero-img.cf-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* =============================================
+   OVERVIEW
+   ============================================= */
+
+.cf-overview-grid {
+    display: grid;
+    grid-template-columns: 1fr 260px;
+    gap: 80px;
+    align-items: start;
+}
+
+.cf-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding-top: 8px;
+}
+
+.cf-meta-group {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.cf-meta-label {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(100,140,255,0.5);
+    margin-bottom: 4px;
+}
+
+.cf-meta-value {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 14px;
+    color: rgba(220,230,255,0.75);
+}
+
+/* =============================================
+   CHALLENGE
+   ============================================= */
+
+.cf-hmw {
+    font-family: 'Fraunces', serif;
+    font-size: 32px;
+    color: #fff;
+    line-height: 1.2;
+    margin-bottom: 56px;
+    padding-left: 28px;
+    border-left: 4px solid rgba(255,255,255,0.5);
+    max-width: 860px;
+}
+
+.cf-goals-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+}
+
+.cf-goals-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.5);
+    margin-bottom: 20px;
+}
+
+.cf-goals-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    counter-reset: goals;
+}
+
+.cf-goals-list li {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 15px;
+    color: rgba(255,255,255,0.85);
+    line-height: 1.6;
+    padding-left: 28px;
+    position: relative;
+    counter-increment: goals;
+}
+
+.cf-goals-list li::before {
+    content: counter(goals) ".";
+    position: absolute;
+    left: 0;
+    color: rgba(255,255,255,0.4);
+    font-weight: 700;
+}
+
+.cf-goals-list strong { color: #fff; }
+
+/* =============================================
+   TIMELINE
+   ============================================= */
+
+.cf-timeline-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2px;
+    margin-top: 48px;
+}
+
+.cf-tl-col {
+    padding: 28px 24px 28px;
+    border-top: 2px solid rgba(255,255,255,0.07);
+    position: relative;
+}
+
+.cf-tl-col::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: 0;
+    width: 32px;
+    height: 2px;
+    background: linear-gradient(90deg, #4d8cff, #00c8a0);
+}
+
+.cf-tl-num {
+    font-family: 'Fraunces', serif;
+    font-size: 11px;
+    font-weight: 700;
+    color: rgba(100,140,255,0.4);
+    letter-spacing: 0.1em;
+    display: block;
+    margin-bottom: 20px;
+}
+
+.cf-tl-week {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: rgba(100,140,255,0.5);
+    display: block;
+    margin-bottom: 8px;
+}
+
+.cf-tl-phase {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.cf-tl-desc {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 13px;
+    color: rgba(180,200,255,0.5);
+    line-height: 1.65;
+}
+
+/* =============================================
+   THE EXPERIENCE — room shots
+   ============================================= */
+
+.cf-room-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+
+.cf-phone-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+}
+
+.cf-phone-caption {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 12px;
+    color: rgba(255,255,255,0.6);
+    letter-spacing: 0.06em;
+}
+
+/* =============================================
+   RAMESH
+   ============================================= */
+
+.cf-ramesh-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 80px;
+    align-items: center;
+}
+
+.cf-ramesh-text .cf-heading {
+    margin-top: 12px;
+}
+
+/* =============================================
+   KEY FEATURES
+   ============================================= */
+
+.cf-features-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-top: 48px;
+}
+
+.cf-feature-card {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.07);
+    border-radius: 20px;
+    padding: 32px;
+}
+
+.cf-feature-img-wrap {
+    overflow: hidden;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0,0,0,0.2);
+}
+
+.cf-feature-img {
+    width: 100%;
+    max-height: 260px;
+    height: auto;
+    object-fit: contain;
+    display: block;
+    border-radius: 8px;
+}
+
+.cf-feature-text {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.cf-feature-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: #fff;
+}
+
+.cf-feature-desc {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 15px;
+    color: rgba(255,255,255,0.6);
+    line-height: 1.75;
+}
+
+/* Registration form callout inside Ramesh section */
+.cf-reg-callout {
+    margin-top: 56px;
+    padding-top: 48px;
+    border-top: 1px solid rgba(255,255,255,0.07);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.cf-reg-callout-label {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: rgba(100,140,255,0.5);
+    margin-bottom: 8px;
+}
+
+.cf-reg-callout-caption {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 14px;
+    color: rgba(180,200,255,0.55);
+    text-align: center;
+    max-width: 400px;
+    line-height: 1.6;
+    margin-bottom: 24px;
+}
+
+/* =============================================
+   RESULTS
+   ============================================= */
+
+.cf-stats-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 24px;
+    margin-top: 48px;
+}
+
+.cf-stat {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(100,140,255,0.15);
+    border-radius: 20px;
+    padding: 48px 36px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.cf-stat-number {
+    font-family: 'Fraunces', serif;
+    font-size: 72px;
+    color: #fff;
+    line-height: 1;
+}
+
+.cf-stat-label {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 14px;
+    color: rgba(180,200,255,0.55);
+    line-height: 1.6;
+}
+
+/* =============================================
+   PLACEHOLDERS
+   ============================================= */
+
+.cf-placeholder {
+    background: rgba(91,200,240,0.15);
+    border: 2px dashed rgba(91,200,240,0.35);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    color: rgba(91,200,240,0.5);
+}
+
+.cf-placeholder::after {
+    content: attr(data-label);
+}
+
+.cf-placeholder--phone {
+    aspect-ratio: 9/19;
+    width: 100%;
+    max-width: 280px;
+    margin: 0 auto;
+}
+
+/* =============================================
+   REAL PHONE IMAGES (no crop)
+   ============================================= */
+
+.cf-phone-img {
+    width: 100%;
+    height: auto;
+    border-radius: 16px;
+    display: block;
+    object-fit: contain;
+}
+
+.cf-feature-img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    display: block;
+    object-fit: contain;
+}
+
+.cf-phone-wrap--img {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+}
+
+/* 3-column experience grid */
+.cf-room-grid--3 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 32px;
+    align-items: start;
+}
+
+/* 4-column Ramesh showcase */
+.cf-phones-4col {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin-top: 48px;
+    align-items: start;
+}
+
+/* Centered single phone */
+.cf-center-phone {
+    display: flex;
+    justify-content: center;
+    margin-top: 56px;
+}
+
+.cf-center-phone img {
+    max-width: 300px;
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+    object-fit: contain;
+    box-shadow: 0 40px 100px rgba(0,0,0,0.55);
+}
