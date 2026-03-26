@@ -234,6 +234,15 @@
     }
 
     /* ==================== CENTER FRESH ==================== */
+    .cf-hero {
+        min-height: 60vh;
+        align-items: flex-end;
+    }
+
+    .cf-hero-img--real {
+        object-position: center top;
+    }
+
     .cf-inner {
         padding: 0 20px;
     }
@@ -359,7 +368,7 @@
         width: 70px;
     }
 
-    .ac-avatar--hero { left: 16px; }
+    .ac-avatar--hero { display: none; }
 
     .ac-overview {
         padding: 56px 0 72px;
