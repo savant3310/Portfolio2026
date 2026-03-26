@@ -1,25 +1,24 @@
 /* =============================================
    MOBILE RESPONSIVE — all pages
-   Breakpoint: 768px
    ============================================= */
 
 @media (max-width: 768px) {
 
     /* ==================== NAV ==================== */
     nav {
-        gap: 20px;
-        padding: 12px 20px;
+        gap: 16px;
+        padding: 12px 16px;
         flex-wrap: wrap;
         justify-content: center;
     }
 
     nav a {
-        font-size: 18px;
+        font-size: 16px;
     }
 
     /* ==================== INDEX — HERO ==================== */
     .main-section {
-        padding: 60px 24px 40px;
+        padding: 56px 20px 32px;
         align-items: flex-start;
         min-height: auto;
     }
@@ -27,123 +26,131 @@
     .hero-inner {
         flex-direction: column;
         align-items: flex-start;
-        gap: 40px;
+        gap: 32px;
     }
 
     .hero-left {
-        padding-top: 60px;
+        padding-top: 56px;
         max-width: 100%;
     }
 
     .hero-headline {
-        font-size: 36px;
+        font-size: 34px;
+        letter-spacing: 0;
     }
 
     .hero-body {
-        font-size: 15px;
+        font-size: 14px;
+        line-height: 1.7;
     }
 
     .sticky-note {
-        width: 110px;
-        height: 110px;
-        top: -50px;
+        width: 100px;
+        height: 100px;
+        top: -44px;
+        font-size: 9px;
     }
 
     .toggle-area {
-        top: 14px;
-        right: 20px;
+        top: 12px;
+        right: 16px;
+        gap: 8px;
     }
 
     .toggle-btn-img {
-        width: 90px;
+        width: 80px;
     }
 
     .toggle-switch {
-        width: 42px;
-        height: 22px;
+        width: 40px;
+        height: 20px;
+        border-radius: 10px;
     }
 
     .toggle-switch::after {
-        width: 17px;
-        height: 17px;
+        width: 15px;
+        height: 15px;
+        top: 2.5px;
+        left: 2.5px;
     }
 
     .toggle-area.on .toggle-switch::after {
-        transform: translateX(20px);
+        transform: translateX(19px);
     }
 
     /* Circles */
     .hero-right {
         flex: 0 0 auto;
         width: 100%;
-        height: 260px;
+        height: 240px;
     }
 
-    .circle-1 { width: 150px; height: 150px; top: 10px; left: 16px; }
-    .circle-2 { width: 190px; height: 190px; top: 60px; left: 80px; }
-    .circles-wrapper.swapped .circle-1 { width: 190px; height: 190px; top: 60px; left: 80px; }
-    .circles-wrapper.swapped .circle-2 { width: 150px; height: 150px; top: 10px; left: 16px; }
+    .circle-1 { width: 140px; height: 140px; top: 10px; left: 14px; }
+    .circle-2 { width: 180px; height: 180px; top: 55px; left: 72px; }
+    .circles-wrapper.swapped .circle-1 { width: 180px; height: 180px; top: 55px; left: 72px; }
+    .circles-wrapper.swapped .circle-2 { width: 140px; height: 140px; top: 10px; left: 14px; }
 
     .design-sticker {
-        width: 110px;
+        width: 100px;
         top: 0;
         right: 0;
     }
 
+    .deco { display: none; }
+
     /* ==================== PEGBOARD ==================== */
     .pegboard-section {
-        padding: 10px 16px 60px;
+        padding: 10px 16px 48px;
     }
 
     .pegboard {
-        min-height: auto;
-        padding: 20px 16px 24px;
-        display: flex;
-        flex-direction: column;
-        gap: 14px;
-        overflow: hidden;
+        min-height: auto !important;
+        padding: 16px;
+        display: grid !important;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+        overflow: visible;
     }
 
+    /* all cards: flow in the grid, full width, no rotation */
     .project-card {
         position: static !important;
         width: 100% !important;
         transform: none !important;
+        cursor: pointer;
     }
 
-    /* visibility on mobile: use display not opacity */
+    /* visibility: use display so hidden cards take no space */
     .project-card[data-type="visual"] {
-        display: none;
-        opacity: 1;
-        pointer-events: auto;
+        display: none !important;
     }
 
     body.visual-mode .project-card[data-type="visual"] {
-        display: block;
-        opacity: 1;
-        pointer-events: auto;
+        display: flex !important;
+        opacity: 1 !important;
+        pointer-events: auto !important;
+        flex-direction: column;
     }
 
     body.visual-mode .project-card[data-type="ux"] {
-        display: none;
+        display: none !important;
     }
 
-    .card-imgs {
-        grid-template-columns: 1fr 1fr;
-    }
+    /* hide non-card pegboard items */
+    .peg-photo  { display: none !important; }
+    .skills-bin { display: none !important; }
 
-    /* hide pegboard decorations on mobile */
-    .peg-photo { display: none !important; }
-    .skills-bin { display: none; }
-    .deco { display: none; }
+    /* card images a bit taller on small screens */
+    .card-img { height: 60px; }
 
     /* ==================== JOURNEY / ABOUT ==================== */
     .journey-section {
-        padding: 60px 24px 80px;
+        padding: 56px 20px 72px;
     }
 
     .journey-inner {
         grid-template-columns: 1fr;
-        gap: 40px;
+        gap: 36px;
     }
 
     .journey-photo-col {
@@ -152,10 +159,12 @@
 
     .journey-photo {
         aspect-ratio: 4 / 3;
+        border-radius: 16px;
     }
 
     .journey-title {
-        font-size: 36px;
+        font-size: 32px;
+        margin-bottom: 20px;
     }
 
     .journey-bio {
@@ -163,13 +172,13 @@
     }
 
     .tl-entry {
-        grid-template-columns: 90px 20px 1fr;
-        gap: 0 12px;
+        grid-template-columns: 80px 18px 1fr;
+        gap: 0 10px;
     }
 
     /* ==================== FOOTER ==================== */
     .site-footer {
-        padding: 60px 24px;
+        padding: 56px 20px;
     }
 
     .footer-inner {
@@ -177,7 +186,11 @@
     }
 
     .footer-name {
-        font-size: 28px;
+        font-size: 26px;
+    }
+
+    .footer-tagline {
+        font-size: 12px;
     }
 
     .footer-links {
@@ -190,11 +203,12 @@
 
     /* ==================== CASE STUDY PAGES ==================== */
     .cs-main {
-        padding: 60px 24px 80px;
+        padding: 56px 20px 72px;
     }
 
     .cs-title {
-        font-size: 40px;
+        font-size: 36px;
+        line-height: 1.05;
     }
 
     .cs-sub {
@@ -203,61 +217,68 @@
 
     .cs-desc {
         grid-template-columns: 1fr;
-        gap: 32px;
+        gap: 28px;
     }
 
     .scroll-gallery {
-        padding: 0 24px 80px;
+        padding: 0 20px 72px;
     }
 
     .next-project {
-        padding: 60px 24px;
+        padding: 56px 20px;
     }
 
     .next-project-title {
-        font-size: 36px;
+        font-size: 32px;
         text-align: center;
     }
 
     /* ==================== CENTER FRESH ==================== */
     .cf-inner {
-        padding: 0 24px;
+        padding: 0 20px;
     }
 
     .cf-section {
-        padding: 60px 0;
+        padding: 56px 0;
     }
 
     .cf-title {
-        font-size: 44px;
+        font-size: 40px;
+        line-height: 1;
     }
 
     .cf-heading {
-        font-size: 30px;
+        font-size: 28px;
+        margin-bottom: 18px;
     }
 
-    .cf-hmw {
-        font-size: 20px;
-        padding-left: 18px;
-    }
-
-    .cf-hero-overlay {
-        padding: 40px 24px;
-    }
-
-    .cf-sub {
+    .cf-body {
         font-size: 15px;
     }
 
-    /* grids → single column */
+    .cf-hmw {
+        font-size: 18px;
+        padding-left: 16px;
+        margin-bottom: 36px;
+    }
+
+    .cf-hero-overlay {
+        padding: 32px 20px;
+    }
+
+    .cf-sub {
+        font-size: 14px;
+    }
+
+    /* grids → stack */
     .cf-overview-grid {
         grid-template-columns: 1fr;
-        gap: 40px;
+        gap: 36px;
     }
 
     .cf-goals-grid {
         grid-template-columns: 1fr;
-        gap: 36px;
+        gap: 32px;
     }
 
     .cf-timeline-grid {
@@ -265,41 +286,62 @@
         gap: 2px;
     }
 
+    .cf-tl-col {
+        padding: 20px 12px;
+    }
+
+    .cf-tl-phase {
+        font-size: 13px;
+    }
+
+    .cf-tl-desc {
+        font-size: 11px;
+    }
+
     .cf-room-grid--3 {
         grid-template-columns: 1fr;
-        gap: 24px;
+        gap: 20px;
     }
 
     .cf-phones-4col {
         grid-template-columns: 1fr 1fr;
-        gap: 16px;
+        gap: 12px;
     }
 
     .cf-features-grid {
         grid-template-columns: 1fr;
-        gap: 16px;
+        gap: 14px;
     }
 
     .cf-stats-grid {
         grid-template-columns: 1fr;
-        gap: 16px;
+        gap: 14px;
+    }
+
+    .cf-stat {
+        padding: 32px 24px;
     }
 
     .cf-stat-number {
-        font-size: 52px;
+        font-size: 48px;
     }
 
     .cf-center-phone img {
-        max-width: 240px;
+        max-width: 220px;
+    }
+
+    .cf-ramesh-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
     }
 
     /* ==================== REEL PAGES ==================== */
     .reel-header {
-        padding: 100px 24px 40px;
+        padding: 90px 20px 36px;
     }
 
     .reel-title {
-        font-size: 40px;
+        font-size: 36px;
     }
 
     .reel-sub {
@@ -307,12 +349,12 @@
     }
 
     .reel-pieces {
-        padding: 0 24px 60px;
-        gap: 56px;
+        padding: 0 20px 56px;
+        gap: 48px;
     }
 
     .reel-piece-title {
-        font-size: 26px;
+        font-size: 24px;
     }
 
     .reel-piece-desc {

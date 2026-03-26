@@ -163,11 +163,11 @@ pegboard.addEventListener('touchstart', (e) => {
     const card = e.target.closest('.project-card, .peg-photo');
     if (!card) return;
     startDrag(card, e.touches[0].clientX, e.touches[0].clientY);
-    e.preventDefault();
-}, { passive: false });
+}, { passive: true });
 document.addEventListener('touchmove', (e) => {
+    if (!dragging) return;          // don't block scroll when not dragging a card
     moveDrag(e.touches[0].clientX, e.touches[0].clientY);
-    e.preventDefault();
+    if (hasMoved) e.preventDefault(); // only lock scroll once actually dragging
 }, { passive: false });
 document.addEventListener('touchend', endDrag);
 
