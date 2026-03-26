@@ -1,0 +1,321 @@
+/* =============================================
+   MOBILE RESPONSIVE — all pages
+   Breakpoint: 768px
+   ============================================= */
+
+@media (max-width: 768px) {
+
+    /* ==================== NAV ==================== */
+    nav {
+        gap: 20px;
+        padding: 12px 20px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    nav a {
+        font-size: 18px;
+    }
+
+    /* ==================== INDEX — HERO ==================== */
+    .main-section {
+        padding: 60px 24px 40px;
+        align-items: flex-start;
+        min-height: auto;
+    }
+
+    .hero-inner {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 40px;
+    }
+
+    .hero-left {
+        padding-top: 60px;
+        max-width: 100%;
+    }
+
+    .hero-headline {
+        font-size: 36px;
+    }
+
+    .hero-body {
+        font-size: 15px;
+    }
+
+    .sticky-note {
+        width: 110px;
+        height: 110px;
+        top: -50px;
+    }
+
+    .toggle-area {
+        top: 14px;
+        right: 20px;
+    }
+
+    .toggle-btn-img {
+        width: 90px;
+    }
+
+    .toggle-switch {
+        width: 42px;
+        height: 22px;
+    }
+
+    .toggle-switch::after {
+        width: 17px;
+        height: 17px;
+    }
+
+    .toggle-area.on .toggle-switch::after {
+        transform: translateX(20px);
+    }
+
+    /* Circles */
+    .hero-right {
+        flex: 0 0 auto;
+        width: 100%;
+        height: 260px;
+    }
+
+    .circle-1 { width: 150px; height: 150px; top: 10px; left: 16px; }
+    .circle-2 { width: 190px; height: 190px; top: 60px; left: 80px; }
+    .circles-wrapper.swapped .circle-1 { width: 190px; height: 190px; top: 60px; left: 80px; }
+    .circles-wrapper.swapped .circle-2 { width: 150px; height: 150px; top: 10px; left: 16px; }
+
+    .design-sticker {
+        width: 110px;
+        top: 0;
+        right: 0;
+    }
+
+    /* ==================== PEGBOARD ==================== */
+    .pegboard-section {
+        padding: 10px 16px 60px;
+    }
+
+    .pegboard {
+        min-height: auto;
+        padding: 20px 16px 24px;
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+        overflow: hidden;
+    }
+
+    .project-card {
+        position: static !important;
+        width: 100% !important;
+        transform: none !important;
+    }
+
+    /* visibility on mobile: use display not opacity */
+    .project-card[data-type="visual"] {
+        display: none;
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    body.visual-mode .project-card[data-type="visual"] {
+        display: block;
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    body.visual-mode .project-card[data-type="ux"] {
+        display: none;
+    }
+
+    .card-imgs {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    /* hide pegboard decorations on mobile */
+    .peg-photo { display: none !important; }
+    .skills-bin { display: none; }
+    .deco { display: none; }
+
+    /* ==================== JOURNEY / ABOUT ==================== */
+    .journey-section {
+        padding: 60px 24px 80px;
+    }
+
+    .journey-inner {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .journey-photo-col {
+        position: static;
+    }
+
+    .journey-photo {
+        aspect-ratio: 4 / 3;
+    }
+
+    .journey-title {
+        font-size: 36px;
+    }
+
+    .journey-bio {
+        font-size: 15px;
+    }
+
+    .tl-entry {
+        grid-template-columns: 90px 20px 1fr;
+        gap: 0 12px;
+    }
+
+    /* ==================== FOOTER ==================== */
+    .site-footer {
+        padding: 60px 24px;
+    }
+
+    .footer-inner {
+        text-align: center;
+    }
+
+    .footer-name {
+        font-size: 28px;
+    }
+
+    .footer-links {
+        flex-direction: column;
+        gap: 8px;
+        align-items: center;
+    }
+
+    .footer-dot { display: none; }
+
+    /* ==================== CASE STUDY PAGES ==================== */
+    .cs-main {
+        padding: 60px 24px 80px;
+    }
+
+    .cs-title {
+        font-size: 40px;
+    }
+
+    .cs-sub {
+        font-size: 14px;
+    }
+
+    .cs-desc {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+
+    .scroll-gallery {
+        padding: 0 24px 80px;
+    }
+
+    .next-project {
+        padding: 60px 24px;
+    }
+
+    .next-project-title {
+        font-size: 36px;
+        text-align: center;
+    }
+
+    /* ==================== CENTER FRESH ==================== */
+    .cf-inner {
+        padding: 0 24px;
+    }
+
+    .cf-section {
+        padding: 60px 0;
+    }
+
+    .cf-title {
+        font-size: 44px;
+    }
+
+    .cf-heading {
+        font-size: 30px;
+    }
+
+    .cf-hmw {
+        font-size: 20px;
+        padding-left: 18px;
+    }
+
+    .cf-hero-overlay {
+        padding: 40px 24px;
+    }
+
+    .cf-sub {
+        font-size: 15px;
+    }
+
+    /* grids → single column */
+    .cf-overview-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .cf-goals-grid {
+        grid-template-columns: 1fr;
+        gap: 36px;
+    }
+
+    .cf-timeline-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 2px;
+    }
+
+    .cf-room-grid--3 {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .cf-phones-4col {
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+    }
+
+    .cf-features-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .cf-stats-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .cf-stat-number {
+        font-size: 52px;
+    }
+
+    .cf-center-phone img {
+        max-width: 240px;
+    }
+
+    /* ==================== REEL PAGES ==================== */
+    .reel-header {
+        padding: 100px 24px 40px;
+    }
+
+    .reel-title {
+        font-size: 40px;
+    }
+
+    .reel-sub {
+        font-size: 14px;
+    }
+
+    .reel-pieces {
+        padding: 0 24px 60px;
+        gap: 56px;
+    }
+
+    .reel-piece-title {
+        font-size: 26px;
+    }
+
+    .reel-piece-desc {
+        font-size: 14px;
+    }
+}
