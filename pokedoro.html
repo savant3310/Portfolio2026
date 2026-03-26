@@ -68,12 +68,26 @@
             background: #fff;
         }
 
+        .pk-iframe-scaler {
+            position: relative;
+            overflow: hidden;
+        }
+
         @media (max-width: 768px) {
             .pk-demo {
                 padding: 0 16px 48px;
             }
+            /* Scale the full desktop iframe down to fit mobile width.
+               Iframe is rendered at 1000px, scaled to ~34% so it fits ~340px screens.
+               Container height = 900px * 0.34 ≈ 306px */
+            .pk-iframe-scaler {
+                height: 306px;
+            }
             .pk-iframe {
-                height: 600px;
+                width: 1000px;
+                height: 900px;
+                transform: scale(0.34);
+                transform-origin: top left;
             }
         }
     </style>
@@ -125,7 +139,9 @@
                 <span class="pk-url">pokedoro-fixed.vercel.app</span>
                 <a href="https://pokedoro-fixed.vercel.app/" target="_blank" class="pk-open">↗ Open full screen</a>
             </div>
-            <iframe src="https://pokedoro-fixed.vercel.app/" class="pk-iframe" title="Pokedoro live app"></iframe>
+            <div class="pk-iframe-scaler">
+                <iframe src="https://pokedoro-fixed.vercel.app/" class="pk-iframe" title="Pokedoro live app"></iframe>
+            </div>
         </div>
     </div>
     <a href="butter-batter.html" class="next-project">

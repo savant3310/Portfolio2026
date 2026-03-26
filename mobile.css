@@ -235,12 +235,24 @@
 
     /* ==================== CENTER FRESH ==================== */
     .cf-hero {
-        min-height: 60vh;
-        align-items: flex-end;
+        flex-direction: column;
+        min-height: auto;
+        align-items: stretch;
     }
 
+    /* Pull image out of absolute background mode — show as a normal contained image */
     .cf-hero-img--real {
+        position: relative;
+        width: 100%;
+        height: 260px;
+        object-fit: cover;
         object-position: center top;
+    }
+
+    .cf-hero-overlay {
+        position: relative;
+        background: #090d28;
+        padding: 28px 20px 36px;
     }
 
     .cf-inner {
